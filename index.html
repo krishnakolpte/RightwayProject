@@ -7,7 +7,12 @@
 
 		<meta
 			http-equiv="Content-Security-Policy"
-			content="script-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests;"
+			content="default-src 'self'; 
+           frame-src 'self' https://www.youtube.com https://www.google.com; 
+           img-src 'self' data: https://img.youtube.com; 
+           script-src 'self' 'unsafe-inline'; 
+           style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; 
+           font-src 'self' https://fonts.gstatic.com;"
 		/>
 
 		<title>
@@ -87,7 +92,11 @@
 			rel="apple-touch-icon"
 			href="./asetts/favicon_io/apple-touch-icon.png"
 		/>
-		<link rel="manifest" href="./asetts/favicon_io/site.webmanifest" />
+		<link
+			rel="manifest"
+			href="./asetts/favicon_io/site.webmanifest"
+			crossorigin="use-credentials"
+		/>
 
 		<script type="application/ld+json">
 			[
@@ -161,11 +170,11 @@
 	>
 		<div class="hidden"></div>
 		<header
-			class="sticky top-0 z-50 w-full border-b border-[#e7e8f3] bg-white/90 backdrop-blur-md"
+			class="sticky top-0 z-60 w-full border-b border-[#e7e8f3] bg-white/90 backdrop-blur-md"
 		>
 			<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 				<div class="flex h-20 items-center justify-between gap-4">
-					<div class="flex items-center gap-3">
+					<a href="#" class="flex items-center gap-3">
 						<div
 							class="flex size-10 items-center justify-center rounded-lg text-primary"
 						>
@@ -174,7 +183,6 @@
 								alt="Rightway Gold Logo"
 								width="40"
 								height="40"
-								loading="lazy"
 								fetchpriority="high"
 							/>
 						</div>
@@ -192,7 +200,30 @@
 								Gold & Silver Loans Simplified
 							</p>
 						</div>
-					</div>
+					</a>
+
+					<nav class="hidden lg:flex items-center gap-8">
+						<a
+							href="#home"
+							class="text-md font-bold text-gray-600 hover:text-primary transition-colors"
+							>Home</a
+						>
+						<a
+							href="#features"
+							class="text-md font-bold text-gray-600 hover:text-primary transition-colors"
+							>Features</a
+						>
+						<a
+							href="#about-us"
+							class="text-md font-bold text-gray-600 hover:text-primary transition-colors"
+							>About</a
+						>
+						<a
+							href="#contact"
+							class="text-md font-bold text-gray-600 hover:text-primary transition-colors"
+							>Contact Us</a
+						>
+					</nav>
 
 					<div class="flex items-center gap-4 sm:gap-6">
 						<nav
@@ -212,7 +243,6 @@
 								/>
 								EN
 							</label>
-
 							<label
 								class="cursor-pointer rounded-md px-3 py-1 text-xs font-bold transition-all has-checked:bg-white has-checked:text-accent has-checked:shadow-sm text-gray-500 hover:text-gray-700"
 							>
@@ -251,10 +281,58 @@
 				</div>
 			</div>
 		</header>
+		<!-- mobile nav -->
+		<div
+			class="fixed bottom-2 left-1/2 z-50 flex -translate-x-1/2 w-[98%] max-w-md border items-center justify-around rounded-2xl bg-white p-2 shadow-2xl backdrop-blur-lg lg:hidden"
+		>
+			<a
+				href="#home"
+				class="flex flex-col items-center gap-1 rounded-xl px-4 py-2 text-dark transition-all active:scale-90"
+			>
+				<span class="material-symbols-outlined text-2xl">home</span>
+				<span class="text-[10px] font-bold uppercase tracking-tighter"
+					>Home</span
+				>
+			</a>
+			<a
+				href="#features"
+				class="flex flex-col items-center gap-1 rounded-xl px-4 py-2 text-dark transition-all active:scale-90 hover:text-white"
+			>
+				<span class="material-symbols-outlined text-2xl">star</span>
+				<span class="text-[10px] font-bold uppercase tracking-tighter"
+					>Features</span
+				>
+			</a>
+			<a
+				href="#about-us"
+				class="flex flex-col items-center gap-1 rounded-xl px-4 py-2 text-dark transition-all active:scale-90 hover:text-white"
+			>
+				<span class="material-symbols-outlined text-2xl">info</span>
+				<span class="text-[10px] font-bold uppercase tracking-tighter"
+					>About</span
+				>
+			</a>
+			<a
+				href="./asetts/RightWay.apk"
+				download="RightWayGold.apk"
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="Download Rightway Gold Android App"
+				class="flex flex-col items-center gap-1 rounded-xl bg-accent px-4 py-2 text-white shadow-lg transition-all active:scale-90"
+			>
+				<span class="material-symbols-outlined text-white"
+					>android</span
+				>
+				<span class="text-[10px] font-bold uppercase tracking-tighter"
+					>App</span
+				>
+			</a>
+		</div>
 
 		<main>
 			<!-- Hero section -->
 			<section
+				id="home"
 				class="relative overflow-hidden bg-gray-50 pt-12 pb-20 lg:pt-24 lg:pb-32"
 			>
 				<div
@@ -1089,6 +1167,85 @@
 								</p>
 							</div>
 						</div>
+						<div
+							class="group relative bg-slate-50 rounded-4xl overflow-hidden transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:-translate-y-3 flex flex-col border border-slate-100"
+						>
+							<div class="h-52 overflow-hidden relative">
+								<img
+									src="./asetts/toWEBP/w1 (5).webp"
+									alt="Repayment"
+									class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+									loading="lazy"
+									height="200"
+									width="250"
+								/>
+								<div
+									class="absolute top-6 left-8 z-20 size-14 bg-primary text-white rounded-2xl flex items-center justify-center shadow-xl shadow-primary/30 group-hover:rotate-12 transition-transform duration-300"
+								>
+									<span
+										class="material-symbols-outlined text-2xl"
+										>calendar_month</span
+									>
+								</div>
+							</div>
+							<div class="p-8 pt-10 relative">
+								<div
+									class="absolute top-0 right-0 -mr-16 -mt-16 size-40 bg-primary/5 rounded-full blur-3xl"
+								></div>
+								<h3
+									class="text-xl font-black text-slate-800 mb-3 group-hover:text-primary transition-colors"
+									data-i18n="choose-5-title"
+								>
+									Flexible Repayment
+								</h3>
+								<p
+									class="text-slate-600 leading-relaxed text-md mb-6"
+									data-i18n="choose-5-desc"
+								>
+									No penalties for missed EMIs. Pay
+									comfortably within 6 months without the
+									stress of rigid deadlines.
+								</p>
+							</div>
+						</div>
+
+						<div
+							class="group relative bg-slate-50 rounded-[2.5rem] overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/10 hover:-translate-y-2 border border-slate-100"
+						>
+							<div class="h-56 overflow-hidden relative">
+								<img
+									src="./asetts/toWEBP/w1 (4).webp"
+									alt="Security"
+									class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+									loading="lazy"
+									height="224"
+									width="400"
+								/>
+								<div
+									class="absolute top-6 left-6 z-20 size-14 bg-orange-600 text-white rounded-2xl flex items-center justify-center shadow-lg group-hover:rotate-6 transition-transform"
+								>
+									<span
+										class="material-symbols-outlined text-2xl"
+										>lock_person</span
+									>
+								</div>
+							</div>
+							<div class="p-8">
+								<h3
+									class="text-xl font-bold text-slate-800 mb-3 group-hover:text-orange-600 transition-colors"
+									data-i18n="choose-6-title"
+								>
+									Secure Storage
+								</h3>
+								<p class="text-slate-600 leading-relaxed">
+									<span data-i18n="choose-6-desc">
+										Your gold is stored in our Head Office
+										vaults with 24/7 security surveillance
+										and full insurance protection.
+									</span>
+								</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -1502,8 +1659,8 @@
 								>
 								<span
 									class="text-text-dark font-mono font-bold ml-2"
-									>L05910KL1997PLC011300</span
-								>
+									>U70200KA2025PTC208912
+								</span>
 							</div>
 							<div class="text-sm">
 								<span
@@ -2750,7 +2907,7 @@
 			</section>
 
 			<!-- contact us form -->
-			<section class="py-20 bg-white relative">
+			<section id="contact" class="py-20 bg-white relative">
 				<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div
 						class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start"
@@ -2815,9 +2972,9 @@
 										>
 											Phone Support
 										</h4>
-										<!-- <p class="text-text-light mt-1">
-										+91 99XXXXXXX
-									</p> -->
+										<p class="text-text-light mt-1">
+											+91 8951949027
+										</p>
 										<p
 											class="text-xs text-text-light"
 											data-i18n="phone-hours"
@@ -3094,7 +3251,7 @@
 							<li>
 								<a
 									class="hover:text-accent transition-colors"
-									href="#"
+									href="#home"
 									data-i18n="nav-home"
 									>Home</a
 								>
@@ -3211,7 +3368,7 @@
 								<a
 									href="tel:+919900000000"
 									class="hover:text-white"
-									>+91 99000 00000</a
+									>+91 8951949027</a
 								>
 							</li>
 							<li class="flex items-center gap-2">

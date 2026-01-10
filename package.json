@@ -1,8 +1,8 @@
 {
 	"name": "rightwayproject",
 	"version": "1.0.0",
-	"description": "",
-	"main": "script.js",
+	"description": "Rightway Gold & Silver Loans Static Site",
+	"main": "index.html",
 	"scripts": {
 		"dev": "npx @tailwindcss/cli -i ./input.css -o ./output.css --watch",
 		"build": "npx @tailwindcss/cli -i ./input.css -o ./output.css --minify"

@@ -794,3 +794,60 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	stats.forEach((stat) => observer.observe(stat));
 });
+
+// nav bar logic smoth scrolling
+
+document.addEventListener("DOMContentLoaded", () => {
+	// 1. Select all links from both Desktop and Mobile navs
+	const desktopLinks = document.querySelectorAll('header nav a[href^="#"]');
+	const mobileLinks = document.querySelectorAll(
+		'.fixed.bottom-2 a[href^="#"]'
+	);
+	const allLinks = [...desktopLinks, ...mobileLinks];
+
+	// 2. Select the sections to watch
+	const sections = document.querySelectorAll('section[id], div[id="home"]');
+
+	const observerOptions = {
+		root: null,
+		rootMargin: "-25% 0px -65% 0px", // Trigger when section is in the middle of the view
+		threshold: 0,
+	};
+
+	const observerCallback = (entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				const id = entry.target.getAttribute("id");
+
+				allLinks.forEach((link) => {
+					const isCurrent = link.getAttribute("href") === `#${id}`;
+
+					if (link.closest("header")) {
+						// Desktop Active Styles
+						link.classList.toggle("text-accent", isCurrent);
+						link.classList.toggle("text-gray-600", !isCurrent);
+					} else {
+						// Mobile Tab Active Styles
+						// We add a background and change text color for the active mobile tab
+						if (isCurrent) {
+							link.classList.add("bg-accent/10", "text-accent");
+							link.classList.remove("text-dark");
+						} else {
+							link.classList.remove(
+								"bg-accent/10",
+								"text-accent"
+							);
+							link.classList.add("text-dark");
+						}
+					}
+				});
+			}
+		});
+	};
+
+	const observer = new IntersectionObserver(
+		observerCallback,
+		observerOptions
+	);
+	sections.forEach((section) => observer.observe(section));
+});

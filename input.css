@@ -94,3 +94,8 @@ html {
 	/* Add local fallbacks */
 	src: local("Arial");
 }
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 5rem; /* Matches your h-20 (80px) header height */
+}
