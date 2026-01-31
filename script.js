@@ -618,21 +618,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	videoContainers.forEach((container) => {
 		container.addEventListener("click", function () {
-			// Get the ID from your current source or data attribute
-			// Example: Extracts ID from the link you provided
-			const fileId = "1Uo0B6T98I9AXbnUKQ07UvtX5eIseFZWC";
-			const previewUrl = `https://drive.google.com/file/d/${fileId}/preview`;
+			// Find the source tag INSIDE the clicked container specifically
+			const source = this.querySelector("source");
 
-			const iframe = document.createElement("iframe");
-			iframe.setAttribute("src", previewUrl);
-			iframe.setAttribute(
-				"class",
-				"absolute inset-0 w-full h-full z-20 border-none",
-			);
-			iframe.setAttribute("allow", "autoplay; fullscreen");
+			if (source) {
+				// Get the unique URL from the source tag
+				const videoUrl = source.getAttribute("src");
 
-			this.innerHTML = ""; // Removes the play button and text
-			this.appendChild(iframe);
+				// Create the Iframe
+				const iframe = document.createElement("iframe");
+				iframe.setAttribute("src", videoUrl);
+				iframe.setAttribute("frameborder", "0");
+				iframe.setAttribute("allow", "autoplay; fullscreen");
+				iframe.setAttribute("allowfullscreen", "true");
+
+				// Styling to fill the container
+				iframe.classList.add(
+					"absolute",
+					"inset-0",
+					"w-full",
+					"h-full",
+					"z-20",
+				);
+
+				// Clear the container (removes old play button/text) and add the unique iframe
+				this.innerHTML = "";
+				this.appendChild(iframe);
+			}
 		});
 	});
 });
