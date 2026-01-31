@@ -843,3 +843,30 @@ document.addEventListener("DOMContentLoaded", () => {
 	);
 	sections.forEach((section) => observer.observe(section));
 });
+
+const playSlogan = () => {
+	const audio = document.getElementById("sloganAudio");
+	if (audio) {
+		audio
+			.play()
+			.then(() => {
+				console.log("Slogan playing successfully!");
+				// Remove listeners so it only plays once
+				removeEventListeners();
+			})
+			.catch((error) => {
+				console.log("Playback failed:", error);
+			});
+	}
+};
+
+const removeEventListeners = () => {
+	window.removeEventListener("click", playSlogan);
+	window.removeEventListener("scroll", playSlogan);
+	window.removeEventListener("touchstart", playSlogan);
+};
+
+// Add listeners for multiple interactions
+window.addEventListener("click", playSlogan);
+window.addEventListener("scroll", playSlogan, { passive: true });
+window.addEventListener("touchstart", playSlogan);
