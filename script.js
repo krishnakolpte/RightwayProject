@@ -191,7 +191,7 @@ const translations = {
 			"Have questions about our gold loans? Visit our branch or send us a message. We are here to help.",
 		"address-label": "Head Office",
 		"address-val":
-			"#26 KHATA-344 B GNANA JYOTHI NAGAR, Bangalore Vishwavidyalaya, Bangalore, Karnataka, India - 560056",
+			"S&S Arcade, 2nd floor, Kuvempu Road, Jnanbharathi, Bangalore 560056",
 		"phone-label": "Phone Support",
 		"phone-hours": "Mon-Sat 9am to 6pm",
 		"email-label": "Email",
@@ -226,7 +226,7 @@ const translations = {
 		"footer-notice":
 			"Gold release available 10 AM - 2 PM (1-2 days prior notice required).",
 		"address-val":
-			"#26 KHATA-344 B GNANA JYOTHI NAGAR, Bangalore Vishwavidyalaya, Bangalore, Karnataka, India - 560056",
+			"S&S Arcade, 2nd floor, Kuvempu Road, Jnanbharathi, Bangalore 560056",
 
 		"community-title": "Join Our Digital Community",
 		"community-desc":
@@ -477,7 +477,7 @@ const translations = {
 			"ನಮ್ಮ ಚಿನ್ನದ ಸಾಲಗಳ ಬಗ್ಗೆ ಪ್ರಶ್ನೆಗಳಿವೆಯೇ? ನಮ್ಮ ಶಾಖೆಗೆ ಭೇಟಿ ನೀಡಿ ಅಥವಾ ನಮಗೆ ಸಂದೇಶ ಕಳುಹಿಸಿ. ನಾವು ಸಹಾಯ ಮಾಡಲು ಸಿದ್ಧರಿದ್ದೇವೆ.",
 		"address-label": "ಮುಖ್ಯ ಕಚೇರಿ",
 		"address-val":
-			"#26 ಖಾತಾ-344 ಬಿ, ಜ್ಞಾನ ಜ್ಯೋತಿ ನಗರ, ಬೆಂಗಳೂರು ವಿಶ್ವವಿದ್ಯಾಲಯ, ಬೆಂಗಳೂರು, ಕರ್ನಾಟಕ, ಭಾರತ - 560056",
+			"S&S Arcade, 2nd floor, Kuvempu Road, Jnanbharathi, Bangalore 560056",
 		"phone-label": "ಫೋನ್ ಬೆಂಬಲ",
 		"phone-hours": "ಸೋಮ-ಶನಿ ಬೆಳಿಗ್ಗೆ 9 ರಿಂದ ಸಂಜೆ 6 ರವರೆಗೆ",
 		"email-label": "ಇಮೇಲ್",
@@ -513,7 +513,7 @@ const translations = {
 		"footer-notice":
 			"ಚಿನ್ನದ ಬಿಡುಗಡೆ ಬೆಳಿಗ್ಗೆ 10 ರಿಂದ ಮಧ್ಯಾಹ್ನ 2 ರವರೆಗೆ ಲಭ್ಯವಿದೆ (1-2 ದಿನಗಳ ಮುಂಚಿತವಾಗಿ ಸೂಚನೆ ಅಗತ್ಯವಿದೆ).",
 		"address-val":
-			"#26 ಖಾತಾ-344 ಬಿ, ಜ್ಞಾನ ಜ್ಯೋತಿ ನಗರ, ಬೆಂಗಳೂರು ವಿಶ್ವವಿದ್ಯಾಲಯ, ಬೆಂಗಳೂರು, ಕರ್ನಾಟಕ, ಭಾರತ - 560056",
+			"S&S Arcade, 2nd floor, Kuvempu Road, Jnanbharathi, Bangalore 560056",
 
 		"community-title": "ನಮ್ಮ ಡಿಜಿಟಲ್ ಸಮುದಾಯಕ್ಕೆ ಸೇರಿ",
 		"community-desc":
